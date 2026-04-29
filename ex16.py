@@ -34,15 +34,25 @@ line3 = input("line 3: ")
 print("I'm going to write these to the file.")
 
 # 逐行写入文件，每行后加换行符
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+target.write(f"{line1}\n{line2}\n{line3}\n")
+# target.write("\n")
+# target.write(line2)
+# target.write("\n")
+# target.write(line3)
+# target.write("\n")
 
 # 告知用户即将关闭文件
 print("And finally, we close it.")
 
 # 关闭文件，释放资源，确保数据写入磁盘
 target.close()
+
+# 告知用户即将打印文件内容
+print("I'm going to print the file.")
+print(f"Here's your file {filename}:")
+
+# 读取文件
+txt = open(filename)
+print(txt.read())
+txt.close()
+
